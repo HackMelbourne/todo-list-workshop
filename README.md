@@ -14,3 +14,6 @@ npm install
 ```
 npm run dev
 ```
+
+* Delete everything in `App.jsx`
+* 
