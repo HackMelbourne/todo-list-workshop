@@ -24,6 +24,7 @@
    ```
 
 ### If You're using CodeSandbox
+
 - Fork this sandbox: https://codesandbox.io/s/qrf93
 
 ## Intro to React
@@ -52,14 +53,11 @@ export default App;
 import "./App.css";
 
 function App() {
-
   return (
     <div className="App">
       <h1>To Do List App</h1>
       <form>
-        <input
-          placeholder="Enter a new task"
-        ></input>
+        <input placeholder="Enter a new task"></input>
         <button type="submit">New Entry</button>
       </form>
       <ul>
@@ -76,8 +74,8 @@ export default App;
 
 ![](2023-03-25-00-56-11.png)
 
-
 ## React States with `useState`
+
 ```jsx
 import "./App.css";
 
@@ -88,9 +86,7 @@ function App() {
     <div className="App">
       <h1>To Do List App</h1>
       <form>
-        <input
-          placeholder="Enter a new task"
-        ></input>
+        <input placeholder="Enter a new task"></input>
         <button type="submit">New Entry</button>
       </form>
       <ul>
@@ -108,6 +104,7 @@ export default App;
 ## JavaScript Functions
 
 ### `createTodo`
+
 ```jsx
 // In App.jsx, within the App() function, before the return
 ...
@@ -123,6 +120,7 @@ export default App;
 ```
 
 ### `toggleDone`
+
 ```jsx
 // In App.jsx, within the App() function, before the return
 ...
@@ -135,6 +133,7 @@ export default App;
 ```
 
 ### `deleteTodo`
+
 ```jsx
 // In App.jsx, within the App() function, before the return
 ...
@@ -144,6 +143,27 @@ export default App;
   };
 ...
 ```
+
+### Local Storage
+
+```jsx
+useEffect(() => {
+  const savedTodos = JSON.parse(localStorage.getItem("todos"));
+  if (savedTodos) {
+    setTodos(savedTodos);
+  }
+}, []);
+
+useEffect(() => {
+  if (todos.length > 0) {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+}, [todos]);
+```
+
+### Final App.jsx
+
+![](./javascript-functions-result.gif)
 
 ```jsx
 import { useState, useEffect } from "react";
@@ -229,23 +249,6 @@ function App() {
 }
 
 export default App;
-
-```
-
-### Local Storage
-```jsx
-  useEffect(() => {
-    const savedTodos = JSON.parse(localStorage.getItem("todos"));
-    if (savedTodos) {
-      setTodos(savedTodos);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (todos.length > 0) {
-      localStorage.setItem("todos", JSON.stringify(todos));
-    }
-  }, [todos]);
 ```
 
 ## Making it Pretty with CSS
