@@ -20,7 +20,7 @@ function App() {
   // Define function to toggle the 'done' property of a todo item
   const toggleDone = (id) => {
     // Find the index of the todo item with the matching id
-    const todoId = todos.findIndex((entry) => entry.id === id);
+    const todoId = todos.findIndex((task) => task.id === id);
     // Toggle the 'done' property of the todo item
     todos[todoId].done = !todos[todoId].done;
     // Update the todos state array using setTodos
@@ -30,7 +30,7 @@ function App() {
   // Define function to delete a todo item
   const deleteTodo = (id) => {
     // Remove the todo item with the matching id from the todos state array
-    const updatedTodo = todos.filter((entry) => entry.id !== id);
+    const updatedTodo = todos.filter((task) => task.id !== id);
     // Update the todos state array using setTodos
     setTodos(updatedTodo);
   };
