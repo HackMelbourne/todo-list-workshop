@@ -93,7 +93,9 @@ function App() {
                 deleteTodo(task.id);
               }}
             >
-              🗑️
+              <span role="img" aria-label="Delete Item">
+                🗑️
+              </span>
             </button>
           </li>
         ))}
