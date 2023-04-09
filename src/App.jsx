@@ -73,19 +73,19 @@ function App() {
           placeholder="Enter a new task"
           type="text"
         ></input>
-        <button type="submit">New Entry</button>
+        <button type="submit">New Task</button>
       </form>
       <ul>
         {/* Map over the todos state array and render a list item for each todo */}
-        {todos.map((entry, i) => (
-          <li key={entry.id} className={entry.done ? "done" : ""}>
-            <input type="checkbox" onChange={() => toggleDone(entry.id)} />
+        {todos.map((task, i) => (
+          <li key={task.id} className={task.done ? "done" : ""}>
+            <input type="checkbox" onChange={() => toggleDone(task.id)} />
             <span className="title">
-              {i + 1}. {entry.title}
+              {i + 1}. {task.title}
             </span>
             <button
               onClick={() => {
-                deleteTodo(entry.id);
+                deleteTodo(task.id);
               }}
             >
               🗑️
