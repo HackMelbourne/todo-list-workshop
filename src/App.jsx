@@ -8,8 +8,9 @@ function App() {
 
   // Define function to create a new todo item
   const createTodo = (title) => {
+    const lastTodoId = todos.length > 0 ? todos[todos.length - 1].id : 0;
     const newTodo = {
-      id: todos.length + 1,
+      id: lastTodoId + 1,
       title: title,
       done: false,
     };
@@ -17,7 +18,6 @@ function App() {
     setTodos([...todos, newTodo]);
   };
 
-  
   // Define function to toggle the 'done' property of a todo item
   const toggleDone = (id) => {
     // Find the index of the todo item with the matching id
